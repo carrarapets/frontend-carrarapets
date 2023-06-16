@@ -88,3 +88,25 @@ export const FisrtSignUpScreen: React.FC<FirstSignupScreenProps> = ({ }) => {
   )
 }
 
+const sendCreateUser = async () => {
+  const response = await fetch(
+    'https://mvpcarrarapets.herokuapp.com/createuser',
+    {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        nome: user.nome,
+        sobrenome: user.sobrenome,
+        cpf: user.cpf,
+        celular: user.celular,
+        email: user.email,
+        password: user.password,
+        rg: user.rg,
+        foto: user.foto
+      }),
+    }
+  )
+}

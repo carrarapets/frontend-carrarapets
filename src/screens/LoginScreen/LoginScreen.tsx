@@ -123,3 +123,21 @@ export const LoginScreen: React.FC<LoginScreen> = ({ }) => {
     </>
   )
 }
+
+
+const sendServer = async () => {
+  const response = await fetch(
+    'https://mvpcarrarapets.herokuapp.com/loginuser',
+    {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email: user.email,
+        password: user.password
+      }),
+    }
+  )
+}

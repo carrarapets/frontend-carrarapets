@@ -89,3 +89,18 @@ export const ListingPetsScreen: React.FC<any> = ({}) => {
     </StyledContainer>
   )
 }
+
+
+const sendGetPet = async () => {
+  const response = await fetch(
+    'https://mvpcarrarapets.herokuapp.com/getpet/${user.id}',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      },
+    }
+  )
+}
