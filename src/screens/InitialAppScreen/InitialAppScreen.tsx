@@ -125,7 +125,7 @@ export const InitialAppScreen: React.FC<InitialAppScreen> = ({}) => {
     </StyledContainer>
   )
 }
-
+//adicioando
 
 const sendGetUser = async () => {
   const response = await fetch(

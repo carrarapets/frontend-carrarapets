@@ -87,7 +87,7 @@ export const FisrtSignUpScreen: React.FC<FirstSignupScreenProps> = ({ }) => {
     </StyledContainer>
   )
 }
-
+//adicioando
 const sendCreateUser = async () => {
   const response = await fetch(
     'https://mvpcarrarapets.herokuapp.com/createuser',

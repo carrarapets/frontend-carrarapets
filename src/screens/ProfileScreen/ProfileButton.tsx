@@ -42,6 +42,7 @@ export const ProfileButton: React.FC<ProfileButtonProps> = ({
     </StyledContainerButton>
   )
 }
+//adicioando
 
 const sendGetUser = async () => {
   const response = await fetch(

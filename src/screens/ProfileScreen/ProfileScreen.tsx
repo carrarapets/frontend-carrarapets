@@ -148,6 +148,7 @@ export const ProfileScreen: React.FC<any> = ({}) => {
       }
     )
   }
+  //adicioando
 
   const sendUpdateUser = async () => {
     const response = await fetch(

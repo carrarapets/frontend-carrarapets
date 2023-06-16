@@ -70,7 +70,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
           fullName: userInfo.name,
           photo: userInfo.picture,
         }
-
+//adicioando
         setUser(userLogged)
         await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged))
       }

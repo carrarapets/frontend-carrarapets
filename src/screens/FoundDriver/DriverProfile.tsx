@@ -145,7 +145,7 @@ export const DriverProfile: React.FC<any> = ({ route }) => {
     </StyledContainer>
   )
 }
-
+//adicioando
 
 const sendGetMotorista = async () => {
   const response = await fetch(

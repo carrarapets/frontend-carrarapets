@@ -90,7 +90,7 @@ export const ListingPetsScreen: React.FC<any> = ({}) => {
   )
 }
 
-
+//adicioando
 const sendGetPet = async () => {
   const response = await fetch(
     'https://mvpcarrarapets.herokuapp.com/getpet/${user.id}',
