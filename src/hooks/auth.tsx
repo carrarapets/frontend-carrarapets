@@ -14,10 +14,11 @@ interface AuthProviderProps {
 
 interface User {
   id: string
-  name: string
-  fullName: string
+  nome: string
+  sobrenome: string
   email: string
   photo?: string
+  lastName: string
 }
 
 interface AuthContextData {
@@ -69,7 +70,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
           fullName: userInfo.name,
           photo: userInfo.picture,
         }
-
+//adicioando
         setUser(userLogged)
         await AsyncStorage.setItem(userStorageKey, JSON.stringify(userLogged))
       }

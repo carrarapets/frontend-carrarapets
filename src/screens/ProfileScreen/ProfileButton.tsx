@@ -42,3 +42,18 @@ export const ProfileButton: React.FC<ProfileButtonProps> = ({
     </StyledContainerButton>
   )
 }
+//adicioando
+
+const sendGetUser = async () => {
+  const response = await fetch(
+    'https://mvpcarrarapets.herokuapp.com/getuser/${user.id}',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      },
+    }
+  )
+}

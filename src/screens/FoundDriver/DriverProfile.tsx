@@ -145,3 +145,18 @@ export const DriverProfile: React.FC<any> = ({ route }) => {
     </StyledContainer>
   )
 }
+//adicioando
+
+const sendGetMotorista = async () => {
+  const response = await fetch(
+    'https://mvpcarrarapets.herokuapp.com/getMotorista/${motorista.id}',
+    {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      },
+    }
+  )
+}

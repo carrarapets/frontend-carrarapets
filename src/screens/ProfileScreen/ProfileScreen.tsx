@@ -126,9 +126,9 @@ export const ProfileScreen: React.FC<any> = ({}) => {
   const { user, signOut } = useAuth()
   const insets = useSafeAreaInsets()
 
-  const sendServer = async () => {
+  const sendCreateUser = async () => {
     const response = await fetch(
-      'https://mvpcarrarapets.herokuapp.com/CreateUser',
+      'https://mvpcarrarapets.herokuapp.com/createuser',
       {
         method: 'POST',
         headers: {
@@ -136,8 +136,54 @@ export const ProfileScreen: React.FC<any> = ({}) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: user.name,
+          nome: user.nome,
+          sobrenome: user.sobrenome,
+          cpf: user.cpf,
+          celular: user.celular,
+          email: user.email,
+          password: user.password,
+          rg: user.rg,
+          foto: user.foto
         }),
+      }
+    )
+  }
+  //adicioando
+
+  const sendUpdateUser = async () => {
+    const response = await fetch(
+      'https://mvpcarrarapets.herokuapp.com/updateuser/${user.id}',
+      {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': this.token
+        },
+        body: JSON.stringify({
+          nome: user.nome,
+          sobrenome: user.sobrenome,
+          cpf: user.cpf,
+          celular: user.celular,
+          email: user.email,
+          password: user.password,
+          rg: user.rg,
+          foto: user.foto
+        }),
+      }
+    )
+  }
+
+  const sendGetUser = async () => {
+    const response = await fetch(
+      'https://mvpcarrarapets.herokuapp.com/getuser/${user.id}',
+      {
+        method: 'GET',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': this.token
+        },
       }
     )
   }
@@ -162,7 +208,7 @@ export const ProfileScreen: React.FC<any> = ({}) => {
           </ProfilePhotoContainer>
           <RatingAndNameContainer>
             <WelcomeText>Bem-vindo</WelcomeText>
-            <NameProfile>{'Guilherme Santana'}</NameProfile>
+            <NameProfile>{user.name}</NameProfile>
             <RatingContainer>
               <StarIcon name={'star'} />
               <Rating>5.0</Rating>
